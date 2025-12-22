@@ -1,0 +1,19 @@
+{
+    "version": "1",
+    "definitions": [
+        {
+            "name": "abmodel",
+            "priority": 400,
+            "type": "c8y_PublicAnalyticsBuilderModel",
+            "fragments": ["c8y_analyticsModel"],
+            "columns": [
+                "id",
+                "name",
+                "tags.**",
+                "state",
+                "mode",
+                "description"
+            ]
+        }
+    ]
+}

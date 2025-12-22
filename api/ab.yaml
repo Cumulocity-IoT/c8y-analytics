@@ -1,0 +1,125 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/reubenmiller/go-c8y-cli/v2/tools/schema/extensionCommands.json
+---
+group:
+  name: ab
+  description: Analytics Builder
+
+commands:
+  - name : list
+    description: Get collection of Analytics Builder models
+    exampleList:
+      - command: c8y analytics ab list
+        description: List Analytics Builder models
+    path: /service/cep/analyticsbuilder
+    method: GET
+  - name : get
+    description: Get Analytics Builder model by ID
+    exampleList:
+      - command: c8y analytics ab get --id 12345
+        description: Get Analytics Builder model by ID
+    path: /service/cep/analyticsbuilder/{id}
+    method: GET
+    pathParameters:
+      - name: id
+        type: string
+        required: true
+        description: The ID of the Analytics Builder model
+  - name: create
+    description: Create a new Analytics Builder model
+    exampleList:
+      - command: c8y analytics ab create --data '{"name":"My AB Model","description":"Description of my model"}'
+        description: Create a new Analytics Builder model
+    path: /service/cep/analyticsbuilder
+    method: POST
+    body:
+      - name: name
+        type: string
+        description: The name of the Analytics Builder model
+        required: false
+        pipeline: true
+      - name: description
+        type: string
+        description: The description of the Analytics Builder model
+        required: false
+      - name: mode
+        type: string
+        description: The mode of the Analytics Builder model
+        required: false
+        validationSet:
+          - DRAFT
+          - SIMULATION
+          - TEST
+          - PRODUCTION
+      - name: state
+        type: string
+        description: The state of the Analytics Builder model
+        required: false
+        validationSet:
+          - ACTIVE
+          - INACTIVE
+    bodyTemplates:
+      - type: jsonnet
+        template: |
+          {
+          type:"c8y_PublicAnalyticsBuilderModel",
+          "c8y_analyticsModel": {},    
+          "modeProperties": {
+           "maxDelaySecsSimulation": 5
+          },
+          "tags": [],
+          "templateParameters": [],
+          "userInterfaceProperties": {
+            "displayGrid": false
+          },
+          "builderModel": {}
+          }
+  - name : delete
+    description: Delete Analytics Builder model by ID
+    exampleList:
+      - command: c8y analytics ab delete --id 12345
+        description: Delete Analytics Builder model by ID
+    path: /service/cep/analyticsbuilder/{id}
+    method: DELETE
+    pathParameters:
+      - name: id
+        type: string
+        required: true
+        description: The ID of the Analytics Builder model
+  - name: update
+    description: Update an existing Analytics Builder model
+    exampleList:
+      - command: c8y analytics ab update --data '{"name":"My AB Model","description":"Description of my model"}'
+        description: Update an existing Analytics Builder model
+    path: /service/cep/analyticsbuilder/{id}
+    method: PUT
+    pathParameters:
+      - name: id
+        type: string
+        required: true
+        description: The ID of the Analytics Builder model
+    body:
+      - name: name
+        type: string
+        description: The name of the Analytics Builder model
+        required: false
+        pipeline: true
+      - name: description
+        type: string
+        description: The description of the Analytics Builder model
+        required: false
+      - name: mode
+        type: string
+        description: The mode of the Analytics Builder model
+        required: false
+        validationSet:
+          - DRAFT
+          - SIMULATION
+          - TEST
+          - PRODUCTION
+      - name: state
+        type: string
+        description: The state of the Analytics Builder model
+        required: false
+        validationSet:
+          - ACTIVE
+          - INACTIVE      

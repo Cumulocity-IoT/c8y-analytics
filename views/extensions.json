@@ -1,0 +1,15 @@
+{
+    "version": "1",
+    "definitions": [
+        {
+            "name": "extensions",
+            "priority": 400,
+            "fragments": ["pas_extension"],
+            "columns": [
+                "id",
+                "name",
+                "lastUpdated"
+            ]
+        }
+    ]
+}

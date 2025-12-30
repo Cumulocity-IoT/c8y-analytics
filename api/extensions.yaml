@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/reubenmiller/go-c8y-cli/v2/tools/schema/extensionCommands.json
+---
+group:
+  name: extensions
+  description: extensions
+
+commands:
+  - name : list
+    description: Get the list of extensions
+    exampleList:
+      - command: c8y analytics extensions list
+        description: Get the list of extensions
+    path: /inventory/managedObjects?fragmentType=pas_extension
+    method: GET
+  - name : get 
+    description: Get an extension by ID
+    exampleList:
+      - command: c8y analytics extensions get --id "{id}"
+        description: Get an extension by ID
+    path: /inventory/managedObjects/{id}
+    method: GET    
+    pathParameters:
+      - name: id
+        type: string
+        required: true
+        description: The ID of the extension
+  - name : upload
+    description: Upload a new extension
+    exampleList:
+      - command: c8y analytics extensions upload --file "./my-extension.zip" --name "My Extension" --pas_extension "My Extension"
+        description: Upload a new extension
+    path: /inventory/binaries
+    method: POST
+    body:
+      - name: file
+        type: file          
+        description: File
+      - name: name
+        type: string
+        description: Set the name of the binary file. This will be the name of the file when it is downloaded in the UI
+        required: true
+      - name: pas_extension
+        type: string
+        required: true
+  - name : delete
+    description: Delete an extension by ID
+    exampleList:
+      - command: c8y analytics extensions delete --id "{id}"
+        description: Delete an extension by ID
+    path: /inventory/binaries/{id}
+    method: DELETE
+    pathParameters:
+      - name: id
+        type: string
+        required: true
+        description: The ID of the extension

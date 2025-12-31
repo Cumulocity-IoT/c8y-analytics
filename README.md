@@ -9,6 +9,7 @@ The extension currently supports
 * Getting / Updating / Deleting individual Analytics Builder models
 * Changing the state of an Analytics Builder model (active, inactive)
 * Changing the mode of an Analytics Builder model (DRAFT, TEST, SIMULATION, PRODUCTION)
+* Listing / Updating / Deleting of all instance of an Analytics Builder Template model
 
 **EPL Apps**
 

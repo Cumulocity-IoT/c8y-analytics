@@ -5,14 +5,14 @@ group:
   description: EPL Apps
 
 commands:
-  - name : list
+  - name: list
     description: Get collection of EPL Apps
     exampleList:
       - command: c8y analytics epl list
         description: List EPL Apps
     path: /inventory/managedObjects?type=apama_eplfile
     method: GET
-  - name : get
+  - name: get
     description: Get EPL App by ID
     exampleList:
       - command: c8y analytics epl get --id 12345
@@ -56,7 +56,7 @@ commands:
           "state": "inactive",
           "contents": "/** Basic event definitions */\nusing com.apama.cumulocity.ManagedObject;\nusing com.apama.cumulocity.FindManagedObject;\nusing com.apama.cumulocity.FindManagedObjectResponse;\nusing com.apama.cumulocity.FindManagedObjectResponseAck;\n\nusing com.apama.cumulocity.Measurement;\nusing com.apama.cumulocity.MeasurementValue;\nusing com.apama.cumulocity.MeasurementFragment;\nusing com.apama.cumulocity.FindMeasurement;\nusing com.apama.cumulocity.FindMeasurementResponse;\nusing com.apama.cumulocity.FindMeasurementResponseAck;\n\nusing com.apama.cumulocity.Alarm;\nusing com.apama.cumulocity.FindAlarm;\nusing com.apama.cumulocity.FindAlarmResponse;\nusing com.apama.cumulocity.FindAlarmResponseAck;\n\nusing com.apama.cumulocity.Event;\nusing com.apama.cumulocity.FindEvent;\nusing com.apama.cumulocity.FindEventResponse;\nusing com.apama.cumulocity.FindEventResponseAck;\n\nusing com.apama.cumulocity.Operation;\nusing com.apama.cumulocity.FindOperation;\nusing com.apama.cumulocity.FindOperationResponse;\nusing com.apama.cumulocity.FindOperationResponseAck;\n\nusing com.apama.cumulocity.ObjectCommitted;\nusing com.apama.cumulocity.ObjectCommitFailed;\n\n/** Miscellaneous utilities */\nusing com.apama.cumulocity.Util;\nusing com.apama.util.AnyExtractor;\n\nmonitor MySampleMonitor {\n\t/** Initialize the application */\n\taction onload() {\n\t\t// Application starts here\n\t}\n}"
           }
-  - name : delete
+  - name: delete
     description: Delete EPL App by ID
     exampleList:
       - command: c8y analytcis epl delete --id 12345

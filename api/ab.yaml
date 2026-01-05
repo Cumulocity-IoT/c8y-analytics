@@ -5,14 +5,14 @@ group:
   description: Analytics Builder
 
 commands:
-  - name : list
+  - name: list
     description: Get collection of Analytics Builder models
     exampleList:
       - command: c8y analytics ab list
         description: List Analytics Builder models
     path: /service/cep/analyticsbuilder
     method: GET
-  - name : get
+  - name: get
     description: Get Analytics Builder model by ID
     exampleList:
       - command: c8y analytics ab get --id 12345
@@ -73,7 +73,7 @@ commands:
           },
           "builderModel": {}
           }
-  - name : delete
+  - name: delete
     description: Delete Analytics Builder model by ID
     exampleList:
       - command: c8y analytics ab delete --id 12345

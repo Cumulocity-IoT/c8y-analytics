@@ -5,7 +5,7 @@ group:
   description: Analytics Builder Template instances
 
 commands:
-  - name : list
+  - name: list
     description: Get all instances of a specific Analytics Builder Template model
     exampleList:
       - command: c8y analytics instances list --id 12345 
@@ -56,7 +56,7 @@ commands:
         validationSet:
           - ACTIVE
           - INACTIVE
-  - name : delete
+  - name: delete
     description: Delete an Analytics Builder Template instance by ID
     exampleList:
       - command: c8y analytics instances delete --id 12345 --instanceId 67890

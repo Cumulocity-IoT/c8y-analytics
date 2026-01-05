@@ -16,6 +16,7 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the Analytics Builder Template 
   - name: update
     description: Update an existing Analytics Builder Template instance
@@ -32,6 +33,10 @@ commands:
       - name: instanceId
         type: string
         required: true
+        pipeline: true
+        pipelineAliases:
+          - id
+          - instanceId
         description: The ID of the Analytics Builder Template instance
     body:
       - name: name
@@ -39,7 +44,6 @@ commands:
         type: string
         description: The name of the Analytics Builder model
         required: false
-        pipeline: true
       - name: mode
         type: string
         description: The mode of the Analytics Builder model
@@ -71,4 +75,8 @@ commands:
       - name: instanceId
         type: string
         required: true
+        pipeline: true
+        pipelineAliases:
+          - id
+          - instanceId
         description: The ID of the Analytics Builder Template instance

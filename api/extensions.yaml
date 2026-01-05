@@ -23,6 +23,7 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the extension
   - name: download
     description: Download an extension by ID
@@ -35,6 +36,7 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the extension
   - name: upload
     description: Upload a new extension
@@ -65,4 +67,5 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the extension

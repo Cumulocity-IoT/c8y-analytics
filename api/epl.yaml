@@ -23,6 +23,7 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the EPL App
   - name: create
     description: Create a new EPL App
@@ -67,6 +68,7 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the EPL App
   - name: update
     description: Update an existing EPL App
@@ -79,6 +81,7 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the EPL App
     body:
       - name: name

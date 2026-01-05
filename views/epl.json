@@ -14,9 +14,9 @@
             ]
         },
         {
-            "name": "eplapps2",
+            "name": "eplapp",
             "priority": 400,
-            "requestPath": "/service/cep/eplfiles/*",
+            "requestPath": "/service/cep/eplfiles/.+",
             "columns": [
                 "id",
                 "name",

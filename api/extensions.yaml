@@ -5,14 +5,14 @@ group:
   description: extensions
 
 commands:
-  - name : list
+  - name: list
     description: Get the list of extensions
     exampleList:
       - command: c8y analytics extensions list
         description: Get the list of extensions
     path: /inventory/managedObjects?fragmentType=pas_extension
     method: GET
-  - name : get 
+  - name: get 
     description: Get an extension by ID
     exampleList:
       - command: c8y analytics extensions get --id "{id}"
@@ -23,20 +23,26 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the extension
-  - name : download
-    description: Download an extension by ID
+  - name: download
+    description: Download an extension
     exampleList:
-      - command: c8y analytics extensions download --id "{id}" --outputFileRaw "./my-extension.zip"  > /dev/null
+      - command: c8y analytics extensions download --id "{id}" --outputFileRaw "./my-extension.zip" > /dev/null
         description: Download an extension by ID
+
+      - command: c8y analytics extensions list | c8y analytics extensions download --outputFileRaw '{filename}.zip' > /dev/null
+        description: Download all extensions
+
     path: /inventory/binaries/{id}
     method: GET
     pathParameters:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the extension
-  - name : upload
+  - name: upload
     description: Upload a new extension
     exampleList:
       - command: c8y analytics extensions upload --file "./my-extension.zip" --name "My Extension" --pas_extension "My Extension"
@@ -54,7 +60,7 @@ commands:
       - name: pas_extension
         type: string
         required: true
-  - name : delete
+  - name: delete
     description: Delete an extension by ID
     exampleList:
       - command: c8y analytics extensions delete --id "{id}"
@@ -65,4 +71,5 @@ commands:
       - name: id
         type: string
         required: true
+        pipeline: true
         description: The ID of the extension

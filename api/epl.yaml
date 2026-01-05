@@ -60,7 +60,7 @@ commands:
   - name: delete
     description: Delete EPL App by ID
     exampleList:
-      - command: c8y analytcis epl delete --id 12345
+      - command: c8y analytics epl delete --id 12345
         description: Delete EPL App by ID
     path: /service/cep/eplfiles/{id}
     method: DELETE
